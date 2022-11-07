@@ -1,0 +1,118 @@
+{
+	"info": {
+		"_postman_id": "5e6348e2-0f4a-4c04-bc94-38e157ca7893",
+		"name": "espressohus",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Customer Services",
+			"item": [
+				{
+					"name": "11 - Read Menu",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8090/customer/menu",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"customer",
+								"menu"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "12 - Create Order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"customer\":\"tim\",\n    \"items\": [\n        \"capuccino\",\n        \"lattie\"\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8090/customer/order",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"customer",
+								"order"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Waiter Services",
+			"item": []
+		},
+		{
+			"name": "Update Coffee Price by File",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "multipart/form-data",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/home/beijim/zipkin-demo/final-waiter-service/src/main/resources/coffee.txt"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8080/coffee",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"coffee"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Coffee Price List",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/coffee/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"coffee",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
